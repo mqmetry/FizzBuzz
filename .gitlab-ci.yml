@@ -1,5 +1,22 @@
 image: maven:3.6-jdk-8
 
+variables:
+  INSTANCE_URL: https://testmanagement.qmetry.com/
+  PROJECT: QAS-QTM Integration
+  API_KEY: k3MvxIwV703wjsV6HkweZ3rGdwf9GDoeWtPc3PRp
+  FILE_NAME: cucumber.json
+  TESTING_TYPE: CUCUMBER
+  # RELEASE_ID: 
+  # CYCLE_ID: 
+  # BUILD_ID: 
+  # PLATFORM_ID: 
+  # TESTSUITE_NAME:
+  # TESTSUITE_ID: 
+  # TESTSUITE_FOLDER_PATH: 
+  SKIP_WARNING: 1
+  IS_MATCHING_REQUIRED: 'false'
+  # AUTOMATION_HIERARCHY: 
+
 build:
   stage: build
   script:
@@ -9,3 +26,15 @@ test:
   stage: test
   script:
     - mvn test
+    - 'FINAL_RESPONSE="$(curl --location 
+      --request POST "$INSTANCE_URL/rest/import/createandscheduletestresults/1"  
+      --header "project:$PROJECT"
+      --header "apiKey:$API_KEY"
+      --form "file=@$FILE_NAME"
+      --form "entityType=$TESTING_TYPE"
+      --form "skipWarning=$SKIP_WARNING"
+      --form "is_matching_required=$IS_MATCHING_REQUIRED"'
+
+    - echo API Response = $FINAL_RESPONSE
+
+    - exit 0
