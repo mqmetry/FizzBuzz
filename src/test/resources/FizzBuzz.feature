@@ -22,10 +22,10 @@
 			"""
 		And match response.error == 'invalid_grant'
 		And match response.error_description == 'Invalid username or password.'
-
+  
 		Examples:
-			| errorData     | username                  | password        | code |
+			| errorData     | username               | password        | code |
 			| wrongUserName | 'user12@gmail.com'     | 'L0ginme@001'   | 400  |
 			| wrongPassword | 'user56+dev@gmail.com' | 'wrongpassword' | 400  |
-			| emptyPassword | 'user99+dev@gmail.com' | 'dksdfvknwd'              | 400  |
+			| emptyPassword | 'user99+dev@gmail.com' | 'dksdfvknwd'    | 400  |
 
