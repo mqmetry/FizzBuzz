@@ -1,4 +1,6 @@
-	Scenario Outline: myQ User Account Login Sending <errorData> to verify 400 Error Code
+Feature: Identity
+
+Scenario Outline: myQ User Account Login Sending <errorData> to verify 400 Error Code
 
 		* def credentials = { username: <username>, password: <password>}
 
