@@ -1,6 +1,6 @@
 Feature: Identity
 
-@testEntityKey=QASI-TC-266
+@testEntityKey=QASI-TC-279
 Scenario Outline: myQ User Account Login Sending <errorData> to verify 400 Error Code
 
 		* def credentials = { username: <username>, password: <password>}
