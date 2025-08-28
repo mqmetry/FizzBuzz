@@ -1,0 +1,109 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "error_message": "TC test error"
+            },
+            "match": {
+              "location": "CalculatorSteps.setUp()"
+            }
+          }
+        ],
+        "line": 23,
+        "name": "I am the Mandatory Release CYcle test case",
+        "description": "",
+        "id": "calculator;add-two-numbers-5",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I am logging in as an Operations Executive",
+            "match": {
+              "location": "CalculatorSteps.i_have_a_calculator()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 22100192,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Using Valid Credentails and VPN",
+            "match": {
+              "arguments": [
+                {
+                  "val": "21",
+                  "offset": 6
+                },
+                {
+                  "val": "11",
+                  "offset": 13
+                }
+              ],
+              "location": "CalculatorSteps.i_add_and(int,int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 22100192,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I should be able to Sign In and nevigated to Operations Page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "21",
+                  "offset": 6
+                },
+                {
+                  "val": "11",
+                  "offset": 13
+                }
+              ],
+              "location": "CalculatorSteps.i_add_and(int,int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 22100192,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I am the new step that was added!",
+            "match": {
+              "arguments": [
+                {
+                  "val": "21",
+                  "offset": 6
+                },
+                {
+                  "val": "11",
+                  "offset": 13
+                }
+              ],
+              "location": "CalculatorSteps.i_add_and(int,int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Calculator",
+    "description": "As a user\nI want to use a calculator\nSo that I don't need to calculate myself",
+    "id": "calculator",
+    "keyword": "Feature",
+    "uri": "cucumber/calculator.feature"
+  }
+]
