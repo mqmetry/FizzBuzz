@@ -9,14 +9,37 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+stages:
+  - stage: Build
+    displayName: "Build Stage"
+    jobs:
+      - job: BuildJob
+        steps:
+          - script: echo ">>> Running Build Stage..."
+            displayName: "Print Build message"
+
+  - stage: Test
+    displayName: "Test Stage"
+    dependsOn: Build
+    jobs:
+      - job: TestJob
+        steps:
+          - script: echo ">>> Running Test Stage..."
+            displayName: "Print Test message"
+
+  - stage: Deploy
+    displayName: "Deploy Stage"
+    dependsOn: Test
+    jobs:
+      - job: DeployJob
+        steps:
+          - script: echo ">>> Running Deploy Stage..."
+            displayName: "Print Deploy message"
+
+          # Example: sending a file from the repo to server via API
+          - script: |
+              echo ">>> Uploading results.json to server..."
+              curl -X POST "https://yourserver.com/api/upload" \
+                   -H "Authorization: Bearer $(API_TOKEN)" \
+                   -F "file=@./results.json"
+            displayName: "Upload file to server"
