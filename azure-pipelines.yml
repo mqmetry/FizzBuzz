@@ -43,5 +43,6 @@ stages:
                    -H "project: QASI" \
                    -H "apikey: k3MvxIwV703wjsV6HkweZ3rGdwf9GDoeWtPc3PRp" \
                    -F "file=@./Cucumber.json" \
-                   -F "entityType=CUCUMBER" 
+                   -F "entityType=CUCUMBER" \
+                   -F "testsuiteId= QASI-TS-497"
             displayName: "Upload file to server"
