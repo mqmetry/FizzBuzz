@@ -39,7 +39,9 @@ stages:
           # Example: sending a file from the repo to server via API
           - script: |
               echo ">>> Uploading results.json to server..."
-              curl -X POST "https://yourserver.com/api/upload" \
-                   -H "Authorization: Bearer $(API_TOKEN)" \
-                   -F "file=@./results.json"
+              curl -X POST "https://testmanagement.qmetry.com/rest/import/createandscheduletestresults/1" \
+                   -H "project: QASI" \
+                   -H "apikey: k3MvxIwV703wjsV6HkweZ3rGdwf9GDoeWtPc3PRp" \
+                   -F "file=@./results.json" \
+                   -F "entityType=CUCUMBER" 
             displayName: "Upload file to server"
