@@ -42,6 +42,6 @@ stages:
               curl -X POST "https://testmanagement.qmetry.com/rest/import/createandscheduletestresults/1" \
                    -H "project: QASI" \
                    -H "apikey: k3MvxIwV703wjsV6HkweZ3rGdwf9GDoeWtPc3PRp" \
-                   -F "file=@./results.json" \
+                   -F "file=@./Cucumber.json" \
                    -F "entityType=CUCUMBER" 
             displayName: "Upload file to server"
